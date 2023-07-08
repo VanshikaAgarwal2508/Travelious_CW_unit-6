@@ -17,6 +17,7 @@ import "./accountpage.css";
 import { useDispatch } from "react-redux";
 import { postNewUser } from "../Redux/action";
 import { useNavigate } from "react-router-dom";
+import { ALL_ROUTE } from "../Redux/actionTypes";
 
 export const Signup = ({ onClose }) => {
   const form = useRef();
@@ -93,6 +94,7 @@ export const Signup = ({ onClose }) => {
       }, 1000)
       
     navigate("/login");
+    dispatch({type:ALL_ROUTE,payload:true})
     if (onClose) {
       onClose();
     }

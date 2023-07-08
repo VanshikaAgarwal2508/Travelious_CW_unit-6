@@ -35,9 +35,14 @@ export default function WithSubnavigation() {
 
 
  
-//  const currUser = useSelector((store) => {
-//     return store.accountReducer.currUser;
-//   });
+ const s = useSelector((store) => {
+    return store
+    ;
+  });
+  
+  console.log(s)
+
+
     // useEffect(() => {
       // const userEmail = JSON.parse(localStorage.getItem("userEmail"));
       // if (userEmail) {
@@ -120,13 +125,16 @@ export default function WithSubnavigation() {
             fontWeight={500}
             color={"whiteAlpha.700"}
             variant={'link'}
+
+           style={{color: s.loginReducer.isLogin? "orange":"whiteAlpha.700"}}
             // href={'/login'}
             onClick={()=>{handleLogin()}}
             >
-              {/* {
-                currUser.email && "Log In"
-              } */}
-           Log In
+              {
+                s.loginReducer.isLogin? s.accountReducer.currUser.firstName
+                : "Log In"
+              }
+          
           </Button>
           <Button
           onClick={()=>{handleRegister()}}

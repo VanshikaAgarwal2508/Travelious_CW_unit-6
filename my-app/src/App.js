@@ -52,9 +52,9 @@ function App() {
       <MainRoutes/>
       <Footer/></>
       } */}
-      <Navbar/>
+      {/* <Navbar/> */}
       <MainRoutes/>
-      <Footer/>
+      {/* <Footer/> */}
 
     </ChakraProvider>
   );

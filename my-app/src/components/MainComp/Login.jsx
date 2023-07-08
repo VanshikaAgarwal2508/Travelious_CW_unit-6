@@ -21,7 +21,7 @@ import { Signup } from "./Signup";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom"
 import { getCurrentUser } from "../Redux/action";
-import { ALL_ROUTE } from "../Redux/actionTypes";
+import { ALL_ROUTE, ONLY_LOGIN } from "../Redux/actionTypes";
 
 
 
@@ -64,7 +64,7 @@ export const Login = () => {
                 isClosable: true,
               })
             dispatch(getCurrentUser(user))
-            dispatch({type:ALL_ROUTE})
+            dispatch({type:ONLY_LOGIN})
             navigate('/')
         }else{
             toast({
